@@ -17,6 +17,8 @@ import {
   deleteDoc,  
   arrayUnion,
 } from "firebase/firestore";
+import EmojiPicker from "emoji-picker-react";
+import { IoMdHappy } from "react-icons/io"; // emoji icon
 
 
 function useSeenTracker(messages, user,roomParticipants) {
@@ -120,6 +122,12 @@ async function sendBotReply(messagesRef, room, userMsg) {
     });
   }, 800);
 }
+const typingMessage = {
+  id: "typing-indicator",
+  user: "System",
+  text: "You are typing...",
+  isTypingIndicator: true,
+};
 
 export const Chat = ({ dark }) => {
   const { roomId } = useParams();
@@ -131,6 +139,40 @@ export const Chat = ({ dark }) => {
   const [roomParticipants, setRoomParticipants] = useState([]);
   const bottomRef = useRef(null);
   const containerRef = useSeenTracker(messages, user,roomParticipants);
+
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  const inputRef = useRef(null);
+
+  const handleEmojiClick = (emojiData) => {
+  const cursorPos = inputRef.current.selectionStart;
+  const textBefore = newMessage.substring(0, cursorPos);
+  const textAfter = newMessage.substring(cursorPos);
+  setNewMessage(textBefore + emojiData.emoji + textAfter);
+
+  // Keep focus in input after selecting
+  setTimeout(() => {
+    inputRef.current.focus();
+    inputRef.current.selectionStart = cursorPos + emojiData.emoji.length;
+    inputRef.current.selectionEnd = cursorPos + emojiData.emoji.length;
+  }, 0);
+};
+
+const [isTyping, setIsTyping] = useState(false);
+  const typingTimeoutRef = useRef(null);
+
+  const handleInputChange = (e) => {
+    setNewMessage(e.target.value);
+    
+    if (!isTyping) setIsTyping(true);
+
+    // Clear existing timeout
+    if (typingTimeoutRef.current) clearTimeout(typingTimeoutRef.current);
+
+    // Set timeout to mark typing stopped after 1.5 seconds of no typing
+    typingTimeoutRef.current = setTimeout(() => {
+      setIsTyping(false);
+    }, 1500);
+  };
 
   const scrollToBottom = () => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -236,7 +278,7 @@ export const Chat = ({ dark }) => {
             {/* Messages */}
             <div 
             ref={containerRef}
-            className="flex flex-col gap-0 max-h-[500px] overflow-y-auto border rounded-lg p-4">
+            className="flex flex-col gap-0 max-h-[500px] overflow-y-auto border rounded-lg p-4" style={{ height: "380px" }}>
               {messages.map((message) => {
                 const isCurrentUser =
                   message.user === (user?.displayName || "Anonymous");
@@ -325,42 +367,102 @@ export const Chat = ({ dark }) => {
                   </div>
                 );
               })}
+              {isTyping && (
+  <div
+    key={typingMessage.id}
+    className={cn(
+      "flex items-end gap-3 p-4 justify-start", // always left aligned
+      "opacity-60 italic text-gray-500 select-none"
+    )}
+  >
+    <div
+      className="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 shrink-0"
+      style={{
+        backgroundImage: `url("https://ui-avatars.com/api/?name=🤖")`,
+      }}
+      title={typingMessage.user}
+    />
+    <div className="flex flex-col gap-1 items-start">
+      <p className="font-normal leading-normal max-w-sm text-muted-foreground">
+        {typingMessage.user}
+      </p>
+      <p className="text-base font-normal leading-normal max-w-sm rounded-lg px-4 py-3 bg-muted text-foreground">
+        {typingMessage.text}
+      </p>
+    </div>
+  </div>
+)}
+
               <div ref={bottomRef} />
+
             </div>
 
             {/* Input */}
-            <form onSubmit={handleSubmit} className="mt-4">
-              <div className="flex items-center px-4 py-4 gap-4 rounded-lg border">
-                <div
-                  className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shrink-0"
-                  style={{
-                    backgroundImage: user?.photoURL
-                      ? `url("${user.photoURL}")`
-                      : `url("https://ui-avatars.com/api/?name=${
-                          user?.displayName?.[0] || "U"
-                        }")`,
-                  }}
-                ></div>
+     <form onSubmit={handleSubmit} className="mt-4">
+  <div className="flex items-center px-4 py-4 gap-4 rounded-lg border relative">
+    {/* User avatar */}
+    <div
+      className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shrink-0"
+      style={{
+        backgroundImage: user?.photoURL
+          ? `url("${user.photoURL}")`
+          : `url("https://ui-avatars.com/api/?name=${
+              user?.displayName?.[0] || "U"
+            }")`,
+      }}
+    ></div>
 
-                <label className="flex flex-col min-w-40 h-12 flex-1">
-                  <div className="flex w-full items-stretch rounded-lg h-full">
-                    <input
-                      type="text"
-                      value={newMessage}
-                      onChange={(e) => setNewMessage(e.target.value)}
-                      placeholder="Type your message..."
-                      className="form-input flex w-full resize-none overflow-hidden rounded-l-lg border-none px-4 text-base focus:outline-none"
-                    />
-                    <button
-                      type="submit"
-                      className="px-4 py-2 rounded-lg bg-white text-black dark:bg-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
-                    >
-                      Send
-                    </button>
-                  </div>
-                </label>
-              </div>
-            </form>
+  
+  {/* Emoji Picker Button */}
+<div className="relative" style={{ overflow: "visible" }}>
+  <button
+    type="button"
+    onClick={() => setShowEmojiPicker((prev) => !prev)}
+    className="text-2xl hover:opacity-70"
+  >
+    <IoMdHappy />
+  </button>
+
+  {showEmojiPicker && (
+    <div
+      className="absolute z-50"
+      style={{
+        bottom: "50px", // lifts it above the button
+        left: 0,
+      }}
+    >
+      <EmojiPicker
+        onEmojiClick={handleEmojiClick}
+        autoFocusSearch={false}
+      />
+    </div>
+  )}
+</div>
+
+
+    {/* Message Input */}
+    <label className="flex flex-col min-w-40 h-12 flex-1">
+      <div className="flex w-full items-stretch rounded-lg h-full">
+        
+        <input
+          ref={inputRef}
+          type="text"
+          value={newMessage}
+          onChange={handleInputChange}
+          placeholder="Type your message..."
+          className="form-input flex w-full resize-none overflow-hidden rounded-l-lg border-none px-4 text-base focus:outline-none"
+        />
+        <button
+          type="submit"
+          className="px-4 py-2 rounded-lg bg-white text-black dark:bg-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+        >
+          Send
+        </button>
+      </div>
+    </label>
+  </div>
+</form>
+
 
           </div>
         </div>
