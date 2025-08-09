@@ -17,6 +17,8 @@ import {
   deleteDoc,  
   arrayUnion,
 } from "firebase/firestore";
+import EmojiPicker from "emoji-picker-react";
+import { IoMdHappy } from "react-icons/io"; // emoji icon
 
 
 function useSeenTracker(messages, user,roomParticipants) {
@@ -132,6 +134,24 @@ export const Chat = ({ dark }) => {
   const bottomRef = useRef(null);
   const containerRef = useSeenTracker(messages, user,roomParticipants);
 
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  const inputRef = useRef(null);
+
+  const handleEmojiClick = (emojiData) => {
+  const cursorPos = inputRef.current.selectionStart;
+  const textBefore = newMessage.substring(0, cursorPos);
+  const textAfter = newMessage.substring(cursorPos);
+  setNewMessage(textBefore + emojiData.emoji + textAfter);
+
+  // Keep focus in input after selecting
+  setTimeout(() => {
+    inputRef.current.focus();
+    inputRef.current.selectionStart = cursorPos + emojiData.emoji.length;
+    inputRef.current.selectionEnd = cursorPos + emojiData.emoji.length;
+  }, 0);
+};
+
+
   const scrollToBottom = () => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -236,7 +256,7 @@ export const Chat = ({ dark }) => {
             {/* Messages */}
             <div 
             ref={containerRef}
-            className="flex flex-col gap-0 max-h-[500px] overflow-y-auto border rounded-lg p-4">
+            className="flex flex-col gap-0 max-h-[500px] overflow-y-auto border rounded-lg p-4" style={{ height: "400px" }}>
               {messages.map((message) => {
                 const isCurrentUser =
                   message.user === (user?.displayName || "Anonymous");
@@ -329,38 +349,70 @@ export const Chat = ({ dark }) => {
             </div>
 
             {/* Input */}
-            <form onSubmit={handleSubmit} className="mt-4">
-              <div className="flex items-center px-4 py-4 gap-4 rounded-lg border">
-                <div
-                  className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shrink-0"
-                  style={{
-                    backgroundImage: user?.photoURL
-                      ? `url("${user.photoURL}")`
-                      : `url("https://ui-avatars.com/api/?name=${
-                          user?.displayName?.[0] || "U"
-                        }")`,
-                  }}
-                ></div>
+     <form onSubmit={handleSubmit} className="mt-4">
+  <div className="flex items-center px-4 py-4 gap-4 rounded-lg border relative">
+    {/* User avatar */}
+    <div
+      className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shrink-0"
+      style={{
+        backgroundImage: user?.photoURL
+          ? `url("${user.photoURL}")`
+          : `url("https://ui-avatars.com/api/?name=${
+              user?.displayName?.[0] || "U"
+            }")`,
+      }}
+    ></div>
 
-                <label className="flex flex-col min-w-40 h-12 flex-1">
-                  <div className="flex w-full items-stretch rounded-lg h-full">
-                    <input
-                      type="text"
-                      value={newMessage}
-                      onChange={(e) => setNewMessage(e.target.value)}
-                      placeholder="Type your message..."
-                      className="form-input flex w-full resize-none overflow-hidden rounded-l-lg border-none px-4 text-base focus:outline-none"
-                    />
-                    <button
-                      type="submit"
-                      className="px-4 py-2 rounded-lg bg-white text-black dark:bg-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
-                    >
-                      Send
-                    </button>
-                  </div>
-                </label>
-              </div>
-            </form>
+  
+  {/* Emoji Picker Button */}
+<div className="relative" style={{ overflow: "visible" }}>
+  <button
+    type="button"
+    onClick={() => setShowEmojiPicker((prev) => !prev)}
+    className="text-2xl hover:opacity-70"
+  >
+    <IoMdHappy />
+  </button>
+
+  {showEmojiPicker && (
+    <div
+      className="absolute z-50"
+      style={{
+        bottom: "50px", // lifts it above the button
+        left: 0,
+      }}
+    >
+      <EmojiPicker
+        onEmojiClick={handleEmojiClick}
+        autoFocusSearch={false}
+      />
+    </div>
+  )}
+</div>
+
+
+    {/* Message Input */}
+    <label className="flex flex-col min-w-40 h-12 flex-1">
+      <div className="flex w-full items-stretch rounded-lg h-full">
+        <input
+          ref={inputRef}
+          type="text"
+          value={newMessage}
+          onChange={(e) => setNewMessage(e.target.value)}
+          placeholder="Type your message..."
+          className="form-input flex w-full resize-none overflow-hidden rounded-l-lg border-none px-4 text-base focus:outline-none"
+        />
+        <button
+          type="submit"
+          className="px-4 py-2 rounded-lg bg-white text-black dark:bg-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+        >
+          Send
+        </button>
+      </div>
+    </label>
+  </div>
+</form>
+
 
           </div>
         </div>
