@@ -42,6 +42,14 @@ export const Navigation = ({ route, roomId, customTitle, dark, setDark }) => {
     }
   };
 
+  const handleProfile = async () => {
+    try {
+      navigate("/profile");
+    } catch (error) {
+      console.error("Profile failed", error);
+    }
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -106,7 +114,7 @@ export const Navigation = ({ route, roomId, customTitle, dark, setDark }) => {
                 Rooms
               </NavLink>
               <Link
-                to="#"
+                to="/about"
                 className="text-gray-900 dark:text-gray-100 text-sm font-medium leading-normal hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 About
@@ -181,6 +189,12 @@ export const Navigation = ({ route, roomId, customTitle, dark, setDark }) => {
                     {user.email || "No email"}
                   </p>
                 </div>
+                <button
+                  onClick={handleProfile}
+                  className="w-full text-left px-4 py-3 text-sm text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
+                >
+                  Profile
+                </button>
                 <button
                   onClick={handleSignOut}
                   className="w-full text-left px-4 py-3 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"

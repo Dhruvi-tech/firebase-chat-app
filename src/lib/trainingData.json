@@ -1,0 +1,431 @@
+{
+  "trainingQuestions": {
+    "General": [
+      {
+        "question": "Hello",
+        "response": "Hello there, how can I help you today?"
+      },
+      {
+        "question": "How's everyone doing today?",
+        "response": "I'm doing great, thanks for asking! How about you? What's been the highlight of your day so far?"
+      },
+      {
+        "question": "What's your favorite book?",
+        "response": "I enjoy discussing all kinds of books! What genre do you prefer? Fiction, non-fiction, sci-fi, or something else? I'd love to hear about what you're currently reading."
+      },
+      {
+        "question": "Any weekend plans?",
+        "response": "Weekends are great for relaxation and fun activities! Are you planning something exciting, or do you prefer a quiet weekend at home? I'd love to hear what you have in mind."
+      },
+      {
+        "question": "What's the weather like where you are?",
+        "response": "Weather can really affect our mood and plans! Is it sunny, rainy, or something in between where you are? Perfect weather for staying indoors and chatting!"
+      },
+      {
+        "question": "Tell me a joke",
+        "response": "Here's one for you: Why don't scientists trust atoms? Because they make up everything! 😄 Do you have any good jokes to share?"
+      },
+      {
+        "question": "What's your favorite movie?",
+        "response": "Movies can be such a fun escape! Do you like action, comedy, or maybe something more thought-provoking?"
+      },
+      {
+        "question": "Do you enjoy traveling?",
+        "response": "Travel opens up so many experiences! Have you been on a memorable trip recently, or do you have a dream destination in mind?"
+      },
+      {
+        "question": "What's your go-to comfort food?",
+        "response": "Comfort food is the best! Do you prefer something savory like pizza or something sweet like ice cream?"
+      },
+      {
+        "question": "Do you prefer mornings or nights?",
+        "response": "Some people are early birds, others are night owls! Which one are you, and why?"
+      },
+      {
+        "question": "What's your favorite holiday?",
+        "response": "Holidays bring such joy and traditions! Do you prefer festive celebrations or quiet family time?"
+      },
+      {
+        "question": "What's your favorite hobby?",
+        "response": "Hobbies are great for relaxation and creativity! Do you enjoy sports, art, gaming, or something else?"
+      },
+      {
+        "question": "Do you enjoy music?",
+        "response": "Music can really set the mood! What's your favorite genre or artist right now?"
+      },
+      {
+        "question": "Are you more into coffee or tea?",
+        "response": "Both have their charm! Coffee for energy, tea for calm vibes. Which one do you prefer?"
+      },
+      {
+        "question": "Do you have a favorite season?",
+        "response": "Seasons really change the atmosphere! Do you love cozy winters, colorful autumns, blooming springs, or sunny summers?"
+      },
+      {
+        "question": "What's your favorite TV show?",
+        "response": "TV shows can be so addictive! Do you prefer binge-worthy dramas, comedies, or documentaries?"
+      },
+      {
+        "question": "Do you like pets?",
+        "response": "Pets bring so much joy! Do you have a pet, or is there an animal you’d love to have?"
+      },
+      {
+        "question": "What's something that always makes you smile?",
+        "response": "Everyone has those little things that brighten their day. What’s one for you?"
+      },
+      {
+        "question": "What's a fun fact about you?",
+        "response": "Fun facts are great conversation starters! Do you have a quirky talent or interesting story to share?"
+      },
+      {
+        "question": "Do you enjoy cooking?",
+        "response": "Cooking can be relaxing and rewarding! Do you like experimenting with recipes or sticking to favorites?"
+      },
+      {
+        "question": "What's your dream job?",
+        "response": "Everyone has career goals or dreams! If you could do anything, what would it be?"
+      },
+      {
+        "question": "What's the last thing that made you laugh?",
+        "response": "Laughter is the best medicine! Was it a funny video, a joke, or something that happened today?"
+      },
+      {
+        "question": "Do you enjoy playing games?",
+        "response": "Games can be so much fun, whether video games, board games, or card games! What's your favorite?"
+      },
+      {
+        "question": "What's your favorite way to relax?",
+        "response": "Relaxation is important! Do you prefer reading, watching shows, meditating, or maybe going for a walk?"
+      },
+      {
+        "question": "Do you believe in luck?",
+        "response": "Some people think luck plays a big role, others say it's all hard work. What’s your take?"
+      },
+      {
+        "question": "If you could learn any skill instantly, what would it be?",
+        "response": "That’s a fun thought! Would you choose something practical like coding, or something creative like painting?"
+      }
+    ],
+
+    "Tech Talk": [
+      {
+        "question": "Hello",
+        "response": "Hello there, how can I help you with tech?"
+      },
+      {
+        "question": "What's the best programming language to learn first?",
+        "response": "Great question! For beginners, I'd recommend **Python** or **JavaScript**. Python has clean syntax and is versatile for web dev, data science, and automation. JavaScript is essential for web development. What's your goal with programming?"
+      },
+      {
+        "question": "How do I optimize my code for better performance?",
+        "response": "Code optimization depends on the language and use case, but here are key principles:\n\n- **Algorithm efficiency**: Choose the right data structures and algorithms\n- **Memory management**: Avoid memory leaks and unnecessary allocations\n- **Profiling**: Measure before optimizing\n- **Caching**: Store frequently used data\n\nWhat specific performance issues are you facing?"
+      },
+      {
+        "question": "What are your thoughts on AI and machine learning?",
+        "response": "AI and ML are revolutionizing technology! We're seeing incredible advances in:\n\n- **Natural Language Processing** (like our conversation!)\n- **Computer Vision** for image recognition\n- **Predictive Analytics** for business insights\n- **Automation** across industries\n\nAre you working on any AI projects or interested in a particular area?"
+      },
+      {
+        "question": "Should I use React or Vue for my next project?",
+        "response": "Both are excellent choices! Here's a quick comparison:\n\n**React**: Larger ecosystem, more job opportunities, backed by Meta\n**Vue**: Gentler learning curve, great documentation, more opinionated\n\nConsider your team's experience, project requirements, and long-term maintenance. What type of project are you building?"
+      },
+      {
+        "question": "How do I secure my web application?",
+        "response": "Web security is crucial! Here are essential practices:\n\n- **HTTPS everywhere** - encrypt data in transit\n- **Input validation** - sanitize all user inputs\n- **Authentication & Authorization** - implement proper user management\n- **SQL Injection prevention** - use parameterized queries\n- **XSS protection** - escape output data\n- **Regular updates** - keep dependencies current\n\nNeed help with any specific security aspect?"
+      },
+      {
+        "question": "What is cloud computing?",
+        "response": "Cloud computing is the delivery of services like storage, databases, servers, and networking over the internet. Popular providers include AWS, Azure, and Google Cloud. Do you want a beginner-friendly overview or a deep dive?"
+      },
+      {
+        "question": "What's the difference between frontend and backend development?",
+        "response": "Frontend is everything the user sees (UI, design, interactivity), while backend handles the server, database, and logic behind the scenes. Are you more interested in designing user experiences or building server logic?"
+      },
+      {
+        "question": "How do I get started with machine learning?",
+        "response": "Start with the basics:\n1. Learn Python\n2. Understand statistics & linear algebra\n3. Explore libraries like Scikit-learn & TensorFlow\n4. Practice with datasets (Kaggle is great!)\n\nDo you prefer hands-on projects or theory first?"
+      },
+      {
+        "question": "What's an API?",
+        "response": "An API (Application Programming Interface) lets software systems talk to each other. For example, using Google Maps in an app is possible via its API. Have you tried calling an API before?"
+      },
+      {
+        "question": "What's the difference between SQL and NoSQL databases?",
+        "response": "**SQL**: Structured, relational, great for consistent data (e.g., MySQL, PostgreSQL)\n**NoSQL**: Flexible, non-relational, great for scalability (e.g., MongoDB, Firebase)\n\nAre you building something that requires scalability or structured data?"
+      },
+      {
+        "question": "What are microservices?",
+        "response": "Microservices are a way of structuring applications as small, independent services that communicate via APIs. They’re popular in large-scale systems for flexibility and scalability. Do you want a simple analogy?"
+      },
+      {
+        "question": "How do I become a full-stack developer?",
+        "response": "Learn the core technologies:\n- **Frontend**: HTML, CSS, JavaScript, a framework (React, Angular, Vue)\n- **Backend**: Node.js, Python, Java, or similar\n- **Databases**: SQL & NoSQL basics\n- **Deployment**: Docker, GitHub, cloud services\n\nDo you want a structured roadmap?"
+      },
+      {
+        "question": "What's DevOps?",
+        "response": "DevOps is the practice of combining development and operations to speed up software delivery and reliability. Tools like Docker, Kubernetes, Jenkins, and CI/CD pipelines are part of it. Interested in the tools or the philosophy behind it?"
+      },
+      {
+        "question": "What's blockchain technology?",
+        "response": "Blockchain is a decentralized digital ledger of transactions. It powers cryptocurrencies like Bitcoin, but also has applications in supply chain, healthcare, and security. Are you curious about crypto or other blockchain uses?"
+      },
+      {
+        "question": "What's the difference between Git and GitHub?",
+        "response": "**Git** is a version control system for tracking changes in code.\n**GitHub** is a platform that hosts Git repositories and adds collaboration tools. Have you used Git for a project yet?"
+      },
+      {
+        "question": "How do I host a website?",
+        "response": "You can host a website by:\n- Using platforms like Netlify or Vercel for static sites\n- Hosting on AWS, Azure, or Google Cloud for scalable apps\n- Shared hosting for simpler setups\n\nDo you want the easiest beginner option or advanced scalability?"
+      },
+      {
+        "question": "What is responsive design?",
+        "response": "Responsive design ensures your website looks good on all devices (desktop, tablet, phone). It's usually achieved with flexible layouts, CSS media queries, and frameworks like Tailwind or Bootstrap. Have you tried making a responsive site?"
+      },
+      {
+        "question": "What's the difference between AI and ML?",
+        "response": "Artificial Intelligence (AI) is the broader concept of machines being able to carry out tasks that simulate human intelligence. Machine Learning (ML) is a subset of AI that enables systems to learn and improve from data. Want me to give you a simple example?"
+      },
+      {
+        "question": "What's an IDE?",
+        "response": "An IDE (Integrated Development Environment) is software that provides tools like a code editor, debugger, and build automation. Examples: VS Code, PyCharm, IntelliJ. Do you already have a favorite IDE?"
+      },
+      {
+        "question": "How do I debug my code?",
+        "response": "Debugging tips:\n- Use print/log statements\n- Step through with a debugger\n- Break the problem into smaller chunks\n- Check assumptions and input data\n\nDo you want me to show you how with a simple example?"
+      },
+      {
+        "question": "What's version control?",
+        "response": "Version control helps track changes to your code and collaborate with others. Git is the most popular system. Have you tried using branches and pull requests?"
+      },
+      {
+        "question": "What is a framework?",
+        "response": "A framework is a set of tools and libraries that provide structure for building applications. Examples: Django (Python), React (JS), Angular (JS). Do you prefer flexibility or having strong conventions?"
+      },
+      {
+        "question": "What is containerization?",
+        "response": "Containerization packages your app and its dependencies into a single unit (a container). Docker is the most popular tool. This ensures your app runs consistently everywhere. Want me to explain with a real-world analogy?"
+      },
+      {
+        "question": "What is serverless computing?",
+        "response": "Serverless computing means you don’t manage servers directly—cloud providers handle it. You just write functions, and they scale automatically (e.g., AWS Lambda, Firebase Functions). Do you want a use-case example?"
+      },
+      {
+        "question": "What is cybersecurity?",
+        "response": "Cybersecurity is protecting systems, networks, and data from digital attacks. This includes firewalls, encryption, secure coding, and monitoring threats. Are you curious about personal security or enterprise security?"
+      }
+    ],
+
+    "Random": [
+      {
+        "question": "Hello",
+        "response": "Hello there, any random question?"
+      },
+      {
+        "question": "If you could have any superpower, what would it be?",
+        "response": "That’s such a fun question! Would you choose flying, invisibility, time travel, or maybe mind reading?"
+      },
+      {
+        "question": "What's the weirdest food you've ever tried?",
+        "response": "Some unusual foods can be surprisingly delicious! Do you have a favorite adventurous dish?"
+      },
+      {
+        "question": "If you won the lottery tomorrow, what's the first thing you'd do?",
+        "response": "Big win! Would you travel, buy something fancy, or save and invest?"
+      },
+      {
+        "question": "Do you believe in aliens?",
+        "response": "The universe is so vast, it’s hard not to wonder! Do you think there’s life out there?"
+      },
+      {
+        "question": "What's the funniest meme you've seen lately?",
+        "response": "Memes never fail to make people laugh! Want to describe it to me?"
+      },
+      {
+        "question": "If you had to live in any movie universe, which one would it be?",
+        "response": "That’s an exciting thought! Would you pick Marvel, Harry Potter, Star Wars, or something else?"
+      },
+      {
+        "question": "What's the strangest dream you've ever had?",
+        "response": "Dreams can be wild! Do you remember any funny or bizarre ones?"
+      },
+      {
+        "question": "If you could switch lives with someone for a day, who would it be?",
+        "response": "It could be fun to walk in someone else’s shoes! Would you pick a celebrity, historical figure, or maybe even a fictional character?"
+      },
+      {
+        "question": "What's your guilty pleasure TV show?",
+        "response": "We all have one! Is it a reality show, a cheesy drama, or maybe cartoons?"
+      },
+      {
+        "question": "If animals could talk, which would be the funniest?",
+        "response": "I feel like cats would be sarcastic, and dogs would never stop talking! What do you think?"
+      },
+      {
+        "question": "Would you rather fight one horse-sized duck or a hundred duck-sized horses?",
+        "response": "Classic silly question! Which one do you think you'd have a better chance against?"
+      },
+      {
+        "question": "What's the most random fact you know?",
+        "response": "Random facts are so fun! Do you have one to share? For example, did you know honey never spoils?"
+      },
+      {
+        "question": "If you could time travel, would you visit the past or the future?",
+        "response": "Both sound exciting! Would you want to see dinosaurs, ancient history, or what the future holds?"
+      },
+      {
+        "question": "What's the weirdest habit you have?",
+        "response": "We all have quirks that make us unique! Do you have a funny or unusual one?"
+      },
+      {
+        "question": "If you could invent a holiday, what would it celebrate?",
+        "response": "That would be fun! Would it be silly like 'Pizza Day' or meaningful like 'Kindness Day'?"
+      },
+      {
+        "question": "What's the most useless talent you have?",
+        "response": "Useless talents can be surprisingly entertaining! Do you have one, like wiggling your ears or making funny noises?"
+      },
+      {
+        "question": "If your life were a movie, what genre would it be?",
+        "response": "Would it be a comedy, drama, action film, or maybe even a sci-fi adventure?"
+      },
+      {
+        "question": "What's your go-to karaoke song?",
+        "response": "Karaoke nights are the best! Do you go for pop hits, classics, or funny songs?"
+      },
+      {
+        "question": "If you had a personal robot, what would you make it do?",
+        "response": "Would you make it do chores, cook meals, or maybe just tell you jokes all day?"
+      },
+      {
+        "question": "What's the silliest thing you believed as a kid?",
+        "response": "Kids come up with the funniest ideas! Did you ever believe something wild?"
+      },
+      {
+        "question": "Would you rather always speak in rhymes or sing instead of talk?",
+        "response": "Both sound hilarious! Which one would you pick for daily life?"
+      },
+      {
+        "question": "What's the weirdest item you own?",
+        "response": "Sometimes random items have the best stories! Do you have one you’d share?"
+      },
+      {
+        "question": "If you could be any fictional character for a week, who would you be?",
+        "response": "Would you want to be a superhero, a wizard, or maybe a video game character?"
+      },
+      {
+        "question": "What's a food combination you secretly enjoy?",
+        "response": "Some unusual combos turn out to be delicious! Do you mix sweet and salty, or something really unexpected?"
+      },
+      {
+        "question": "If you had to pick a theme song for your life, what would it be?",
+        "response": "That’s a fun one! Would it be upbeat, dramatic, or completely silly?"
+      }
+    ],
+
+    "Gaming": [
+      {
+        "question": "Hello",
+        "response": "Hello there, any gaming questions for me?"
+      },
+      {
+        "question": "What's your favorite video game of all time?",
+        "response": "That’s a tough choice! Some people love classics like Mario, while others prefer open-world games like Skyrim. What’s your personal favorite?"
+      },
+      {
+        "question": "Do you play on PC or console?",
+        "response": "Both have their strengths! PC offers flexibility, while consoles are great for plug-and-play. Which one do you prefer?"
+      },
+      {
+        "question": "Who's your favorite video game character?",
+        "response": "Iconic characters like Mario, Link, and Master Chief have shaped gaming history. Do you have a favorite hero or villain?"
+      },
+      {
+        "question": "Do you enjoy single-player or multiplayer games more?",
+        "response": "Single-player games are immersive, while multiplayer brings friends together. Which do you usually prefer?"
+      },
+      {
+        "question": "What's the first game you ever played?",
+        "response": "Everyone remembers their first game! Was it a retro classic, an arcade game, or something on mobile?"
+      },
+      {
+        "question": "Do you like RPGs?",
+        "response": "Role-playing games are all about stories, choices, and character growth! Do you prefer turn-based or open-world RPGs?"
+      },
+      {
+        "question": "What's the hardest game you've ever beaten?",
+        "response": "Some games are brutally challenging! Dark Souls, Cuphead, or maybe something else—what’s your toughest victory?"
+      },
+      {
+        "question": "Do you enjoy mobile games?",
+        "response": "Mobile games can be super convenient! Do you prefer casual games like Candy Crush or competitive ones like PUBG Mobile?"
+      },
+      {
+        "question": "What's your favorite board game?",
+        "response": "Board games bring people together! Do you like strategy games like Catan or classics like Monopoly?"
+      },
+      {
+        "question": "Do you prefer retro games or modern ones?",
+        "response": "Retro games have nostalgia, while modern games have amazing graphics. Which style do you enjoy more?"
+      },
+      {
+        "question": "What's your favorite game soundtrack?",
+        "response": "Video game music can be legendary—like Zelda, Final Fantasy, or Halo. Which one gives you chills?"
+      },
+      {
+        "question": "Do you enjoy horror games?",
+        "response": "Horror games can be terrifying but fun! Do you like jump scares or slow-burn suspense?"
+      },
+      {
+        "question": "What's your favorite online multiplayer game?",
+        "response": "Online games like Fortnite, Valorant, or Minecraft bring people together. Which one’s your go-to?"
+      },
+      {
+        "question": "Do you play competitive games or just for fun?",
+        "response": "Some people love the challenge of ranked matches, while others just want to relax. How about you?"
+      },
+      {
+        "question": "What's your favorite Nintendo game?",
+        "response": "Nintendo has so many classics—Zelda, Mario, Pokémon, Smash Bros. Which one do you love most?"
+      },
+      {
+        "question": "Do you use mods in games?",
+        "response": "Mods can completely change a game! Have you ever tried modding Skyrim, Minecraft, or GTA?"
+      },
+      {
+        "question": "What's your favorite co-op game?",
+        "response": "Co-op games are great for teamwork! Do you prefer puzzle-solving games or action-packed adventures?"
+      },
+      {
+        "question": "Do you watch esports?",
+        "response": "Esports are huge right now, with games like League of Legends and CS:GO. Do you follow any tournaments?"
+      },
+      {
+        "question": "What's your go-to game when you just want to relax?",
+        "response": "Some games are perfect for winding down, like Stardew Valley or Animal Crossing. What’s yours?"
+      },
+      {
+        "question": "Do you prefer story-driven games or gameplay-focused ones?",
+        "response": "Some players love immersive stories, others focus on mechanics. Which pulls you in more?"
+      },
+      {
+        "question": "What's your favorite PlayStation exclusive?",
+        "response": "PlayStation has amazing exclusives like God of War, The Last of Us, and Spider-Man. Which one stands out for you?"
+      },
+      {
+        "question": "What's your favorite Xbox exclusive?",
+        "response": "Xbox shines with Halo, Forza, and Gears of War. Which one do you enjoy most?"
+      },
+      {
+        "question": "Do you play simulation games?",
+        "response": "Sim games like The Sims, Flight Simulator, or SimCity can be addictive! Do you play them?"
+      },
+      {
+        "question": "What's your funniest gaming moment?",
+        "response": "Games can create hilarious situations! Have you ever had a glitch or funny multiplayer experience?"
+      },
+      {
+        "question": "If you could create your own video game, what would it be about?",
+        "response": "That’s a cool idea! Would it be action-packed, story-driven, or something completely new?"
+      }
+    ]
+  }
+}
